@@ -1,0 +1,127 @@
+
+div#head {
+    border-bottom-style: solid;
+    border-bottom-width: 2px;
+    border-bottom-color: #053768;
+}
+h1 {
+    font-family: arial;
+    font-size: 20px;
+    letter-spacing: 3px;
+    color: #0F445E;
+    display: inline;
+
+}
+
+
+
+div#menu {
+    margin-top: 20px;
+}
+
+
+
+
+div#menu a:link {
+    font-family: verdana;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-right: 10px;
+    color: green;
+    text-decoration: none;
+}
+div#menu a:visited {
+    font-family: verdana;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-right: 10px;
+    color: #6B6666;
+    text-decoration: none;
+}
+div#menu a:hover {
+    font-family: verdana;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-right: 10px;
+    color: orange;
+    text-decoration: underline;
+}
+fieldset#dsc {
+    
+    border-top: 50%;
+    height: 100%;
+    width: 80%;
+    margin: 40px auto;
+    font-family: calibri;
+    font-size: 14px;
+    text-align: justify;
+    padding: 20px;
+}
+fieldset#frm {
+    
+    
+    width: 280px;
+    margin: 60px;
+    font-family: calibri;
+    font-size: 14px;
+    text-align: justify;
+    padding: 20px;
+}
+fieldset#lst {
+    
+ 
+    width: 60%;
+    margin: 40px auto;
+    font-family: calibri;
+    font-size: 14px;
+    text-align: justify;
+    padding: 20px;
+}
+legend{
+    font-family: arial;
+    font-size: 12px;
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+table#Form {
+    text-align: right;
+}
+table#lst {
+    width: 100%;
+
+}
+table#lst th {
+    background-color: black;
+    color: white;
+}
+.filaIMP {
+    background-color: #D5D2D2;
+}
+.filaPAR {
+    background-color: #AEA6A6;
+}
+.titERR {
+    font-weight: bold;
+    color: #8A0808;
+    
+}
+.msgERR {
+    color: #1A5471;
+}
+table#lst a:link {
+    color: #108E10;
+    text-decoration: none;
+}
+table#lst a:visited {
+    color: #C1B8B8;
+    text-decoration: none;
+}
+table#lst a:hover {
+    color: ##E7790A;
+    text-decoration: underline;
+}
+
