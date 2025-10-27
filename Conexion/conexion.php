@@ -1,6 +1,6 @@
 <?php
     // PROCESO DE CONEXION AL SERVIDOR DE BASE DE DATOS
-    $conexion = mysql_connect("localhost","root","harb1982");
+    $conexion = mysql_connect("ubuntusqlserver.red.local","root","password");
     // controlar conexión
     if (!$conexion) {
       //  header("Location: ProcesoErrorPage.php?MSG=NO se pudo CONECTAR al SERVIDOR de Base de Datos");
