@@ -58,10 +58,10 @@
 		}//endif
 
 		$sql = "SELECT * FROM categorias ORDER BY $orden";	
-		$result = mysql_query($sql,$conexion) or die("Error en: $sql: " . mysql_error());
+		$result = mysqli_query($conexion,$sql) or die("Error en: $sql: " . mysqli_error($conexion));
 
 
-			$num_regs = mysql_num_rows($result);
+			$num_regs = mysqli_num_rows($result);
 		    if ($num_regs==0) {
             // enviar aviso
             echo "<span class='titERR'>No fueron hallados registros para la búsqueda realizada.</span>" ;
@@ -84,7 +84,7 @@
 		     ";
 
 		$fila=1;
-		while ($regCat=mysql_fetch_array($result)) {
+		while ($regCat=mysqli_fetch_array($result)) {
 				$id = utf8_encode($regCat["idCat"]);
 				$categoria = utf8_encode($regCat["tipoCat"]);
 			$resto = $fila%2;

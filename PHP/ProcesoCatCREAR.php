@@ -7,8 +7,8 @@
     
     $consulta = "SELECT * FROM categorias WHERE tipoCat='$categoria'";
 
-    $resultado = mysql_query($consulta ,$conexion);
-    $num_regs = mysql_num_rows($resultado);
+    $resultado = mysqli_query($conexion, $consulta);
+    $num_regs = mysqli_num_rows($resultado);
     if ($num_regs==0) {
         // crear sentencia SQL para insertar registro
     $sql  = "INSERT INTO categorias ";
@@ -17,9 +17,9 @@
     $sql .= "(null,'$categoria')";    
     
     // ejecutar sconsulta
-    $ejecutarCons=mysql_query($sql,$conexion);
+    $ejecutarCons=mysqli_query($conexion,$sql);
     // cerrar conexión
-    mysql_close($conexion);
+    mysqli_close($conexion);
 
     //mensajes de confirmacion
     if ($ejecutarCons) {

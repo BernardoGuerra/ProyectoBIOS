@@ -53,8 +53,8 @@ if (isset($_GET["ORD"])){
 
         $sql = "SELECT * FROM productos AS p JOIN categorias AS c WHERE (c.idCat=$cat AND c.idCat=p.idCatProd) ORDER BY $orden";
     // ejecutar sentencia SQL
-    $resultado = mysql_query($sql ,$conexion) ;
-    $num_regs = mysql_num_rows($resultado);
+    $resultado = mysqli_query($conexion, $sql) ;
+    $num_regs = mysqli_num_rows($resultado);
 
     if ($num_regs==0) {
             // enviar aviso
@@ -107,7 +107,7 @@ if (isset($_GET["ORD"])){
 
 
      $fila=1;   
-     while ($lista=mysql_fetch_array($resultado)) {
+     while ($lista=mysqli_fetch_array($resultado)) {
         // convertir datos
         $id = utf8_encode($lista["idProd"]);
         $categoria = utf8_encode($lista["tipoCat"]);

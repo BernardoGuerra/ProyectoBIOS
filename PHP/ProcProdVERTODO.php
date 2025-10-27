@@ -42,9 +42,9 @@
 
 		$sql = "SELECT p.idProd, p.marcaProd, p.descProd, p.origenProd, p.precioProd, c.tipoCat FROM productos AS p JOIN categorias AS c ON p.idCatProd=c.idCat ORDER BY $orden";
 
-		$result = mysql_query($sql,$conexion) or die("Error en: $sql: " . mysql_error());
+		$result = mysqli_query($conexion,$sql) or die("Error en: $sql: " . mysqli_error($conexion));
 
-		 $num_regs = mysql_num_rows($result);
+		 $num_regs = mysqli_num_rows($result);
 
 
 
@@ -92,7 +92,7 @@
 
 			";
 		$fila=1;
-		while ($regProd=mysql_fetch_array($result)) {
+		while ($regProd=mysqli_fetch_array($result)) {
 				$id = utf8_encode($regProd["idProd"]);
 				$producto = utf8_encode($regProd["marcaProd"]);
 				$descripcion = utf8_encode($regProd["descProd"]);
@@ -128,7 +128,7 @@
 
 			}
 			//cerras conexion
-			mysql_close($conexion);
+			mysqli_close($conexion);
 			
 
 

@@ -1,4 +1,4 @@
-<?php
+ç<?php
     // Proceso borrar productos
     
     // conectar al servidor de Base de datos
@@ -9,7 +9,7 @@
     $sql  = "DELETE FROM productos WHERE idProd=$id";
     
     // ejecutar consulta
-    $ejecutar_consulta = mysql_query($sql,$conexion);
+    $ejecutar_consulta = mysqli_query($conexion,$sql);
 
     //mensajes de confirmacion
     if ($ejecutar_consulta) {
@@ -21,7 +21,7 @@
 
 
     // cerrar conexión
-    mysql_close($conexion);                 
+    mysqli_close($conexion);                 
     // volver automáticamente al Formulario de UPD
     header("location: ProcProdVERTODO.php?MJE=$mje");
 ?>
