@@ -15,7 +15,7 @@
 
     // ejecutar consulta
 
-   $ejecutar_consulta = mysql_query($sql,$conexion)or die("Error en: $sql: " . mysql_error());
+   $ejecutar_consulta = mysqli_query($conexion, $sql)or die("Error en: $sql: " . mysqli_error($conexion));
 
    //mensajes de confirmacion
     if ($ejecutar_consulta) {
@@ -24,7 +24,7 @@
         $mje = "<span class='titERR'>No se pudo modificar la categoría $categoria</span>";
     }
     // cerrar conexión
-    mysql_close($conexion);
+    mysqli_close($conexion);
     // volver automáticamente al formulario
     
    // header("Location: history.back(-2)")

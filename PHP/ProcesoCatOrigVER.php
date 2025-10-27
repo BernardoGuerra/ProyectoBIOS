@@ -64,8 +64,8 @@ if (isset($_GET["ORD"])){
        $sql = "SELECT p.idProd, p.marcaProd, p.descProd, p.origenProd, p.precioProd, c.tipoCat FROM productos AS p JOIN categorias AS c ON p.idCatProd=c.idCat WHERE p.origenProd='$orig' AND c.idCat=$cat  ORDER BY $orden";
     
     // ejecutar sentencia SQL
-    $resultado = mysql_query($sql ,$conexion) or die ("Error en: $sql: " . mysql_error() . " -" . mysql_errno());
-         $num_regs = mysql_num_rows($resultado);
+    $resultado = mysqli_query($conexion, $sql) or die ("Error en: $sql: " . mysqli_error($conexion) . " -" . mysqli_errno($conexion));
+         $num_regs = mysqli_num_rows($resultado);
 
     //verifica si existe el registro
     if ($num_regs==0) {
@@ -115,7 +115,7 @@ if (isset($_GET["ORD"])){
 
 
      $fila=1;   
-     while ($lista=mysql_fetch_array($resultado)) { 
+     while ($lista=mysqli_fetch_array($resultado)) { 
         // convertir datos
         $id = utf8_encode($lista["idProd"]);
         $marca = utf8_encode($lista["marcaProd"]);

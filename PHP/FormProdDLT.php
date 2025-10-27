@@ -18,9 +18,9 @@
 
 $sql = "SELECT * FROM productos AS p JOIN categorias AS c ON p.idCatProd=c.idCat WHERE p.idProd=$id ";
 
-$resultado = mysql_query($sql, $conexion)or die ("Error en: $sql: " . mysql_error() . " -" . mysql_errno());
+$resultado = mysqli_query($conexion, $sql)or die ("Error en: $sql: " . mysqli_error($conexion) . " -" . mysqli_errno($conexion));
 
-$lista=mysql_fetch_array($resultado);
+$lista=mysqli_fetch_array($resultado);
 	$id = utf8_encode($lista["idProd"]);
         $marca = utf8_encode($lista["marcaProd"]);
         $descripcion = utf8_encode($lista["descProd"]);

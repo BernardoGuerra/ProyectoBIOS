@@ -59,9 +59,9 @@ if (isset($_GET["ORD"])){
 
 
     // ejecutar sentencia SQL
-    $resultado = mysql_query($sql ,$conexion) or die ("Error en: $sql: " . mysql_error() . " -" . mysql_errno());
+    $resultado = mysqli_query($conexion, $sql) or die ("Error en: $sql: " . mysqli_error($conexion) . " -" . mysqli_errno($conexion));
 
-  $num_regs = mysql_num_rows($resultado);
+  $num_regs = mysqli_num_rows($resultado);
 
     if ($num_regs==0) {
             // enviar aviso
@@ -115,7 +115,7 @@ if (isset($_GET["ORD"])){
 
 
      $fila=1;   
-     while ($lista=mysql_fetch_array($resultado)) { 
+     while ($lista=mysqli_fetch_array($resultado)) { 
         // convertir datos
         $id = utf8_encode($lista["idProd"]);
         $descripcion = utf8_encode($lista["descProd"]);

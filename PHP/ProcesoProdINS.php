@@ -16,7 +16,7 @@
     $sql .= "('$marca','$descripcion','$origen',$precio,$categoria)";    
     
     // ejecutar consulta
-    $ejecutar_consulta=mysql_query($sql,$conexion);
+    $ejecutar_consulta=mysqli_query($conexion,$sql);
 
 
     //mensaje de confirmacion
@@ -27,7 +27,7 @@
     }
     
     // cerrar conexión
-    mysql_close($conexion);
+    mysqli_close($conexion);
     // volver automáticamente al formulario
     header("Location: ProcProdVERTODO.php?MJE=$mje");
 ?>

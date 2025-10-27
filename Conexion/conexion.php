@@ -1,20 +1,19 @@
+
 <?php
     // PROCESO DE CONEXION AL SERVIDOR DE BASE DE DATOS
-    $conexion = mysql_connect("ubuntusqlserver.red.local","root","password");
+    $conexion = mysqli_connect("192.168.10.50", "appuser", "clave_segura", "marketcamdb");
     // controlar conexión
     if (!$conexion) {
-      //  header("Location: ProcesoErrorPage.php?MSG=NO se pudo CONECTAR al SERVIDOR de Base de Datos");
-    echo "NO se pudo conectar...";
+        echo "Error al conectar: " . mysqli_connect_errno() . " - " . mysqli_connect_error();
+        exit;
+    }
 
-    } // endif
-    
-
-
-   // seleccionar Base de Datos
-    $selDB = mysql_select_db("marketcamdb",$conexion);
-    // controlar conexión
+    // No es necesario este paso si ya pusiste la DB en mysqli_connect, pero si quieres control adicional:
+    /*
+    $selDB = mysqli_select_db($conexion, "marketcamdb");
     if (!$selDB) {
-       // header("Location: ProcesoErrorPage.php?MSG=NO se pudo SELECCIONAR Base de Datos");
         echo "NO se pudo seleccionar BD...";
-    } // endif
+    }
+    */
 ?>
+
